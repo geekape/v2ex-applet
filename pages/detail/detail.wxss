@@ -1,0 +1,73 @@
+/* pages/detail/detail.wxss */
+
+image {
+  width: 35px;
+  min-width: 35px;
+  height: 35px;
+  background: #ddd;
+  border-radius: 50%;
+}
+.detail {
+  background: #fff;
+  padding: 20rpx;
+}
+
+
+.detail-tt {
+  font-size: 24px;
+  padding: 30rpx 0;
+  display: block;
+}
+
+.detail-author {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+.detail-author text {
+  color:#b2b2b2;
+}
+
+.detail-author .detail-author__name {
+  flex: 1;
+  margin-left: 15rpx;
+  color: #333;
+}
+
+
+.detail-ct {
+  border-bottom: 1px solid #eee;
+  padding: 40rpx 0;
+}
+
+.detail-mes {
+  margin-top: 40rpx;
+}
+.detail-mes__item {
+  margin-bottom: 40rpx;
+}
+.detail-mes__item,
+.detail-mes__info {
+  display: flex;
+}
+.detail-mes__info {
+  flex-direction: column;
+  margin-left: 20rpx;
+  flex: 1;
+}
+.detail-mes__txt {
+  margin-top: 15rpx;
+  margin-bottom: 10rpx;
+}
+.detail-mes__name {
+  color: #69d2e7;
+}
+.detail-mes__tower,
+.detail-mes__name,
+.detail-mes__time {
+  font-size: 13px;
+}
+.detail-mes__tower {
+  float: right;
+  color: #b2b2b2;
+}

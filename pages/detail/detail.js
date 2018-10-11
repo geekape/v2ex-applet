@@ -1,44 +1,67 @@
+const formatTime = require('../../utils/formatTime.js')
 
-
-// pages/new/new.js
+// pages/detail/detail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    newData: [],
+    detailData: [],
+    message: [],
     hidden: false
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  loadDetail: function(id) {
     var _this = this
     wx.cloud.callFunction({
       // 云函数名称
       name: 'v2ex',
       // 传给云函数的参数
       data: {
-        url: 'https://www.v2ex.com/api/topics/latest.json'
+        url: 'https://www.v2ex.com/api/topics/show.json?id=' + id
       },
     })
       .then(res => {
-        _this.setData({ newData: res.result })
+        res.result[0].created = formatTime.ago(res.result[0].created)
+        _this.setData({ detailData: res.result[0] })
+        
+      })
+      .catch(console.error)
+    
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'v2ex',
+      // 传给云函数的参数
+      data: {
+        url: 'https://www.v2ex.com/api/replies/show.json?topic_id=' + id
+      },
+    })
+      .then(res => {
+        // 格式化时间
+        res.result.forEach(item => item.created = formatTime.ago(item.created))
+
+        _this.setData({ message: res.result })
+
         setTimeout(() => {
           _this.setData({ hidden: true });
         }, 300)
       })
-      .catch(console.error)    
+      .catch(console.error)
+  },
 
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    // 加载传过来的id值
+    this.loadDetail(options.id)
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+   
   },
 
   /**

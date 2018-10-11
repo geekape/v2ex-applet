@@ -1,11 +1,12 @@
 <!-- 引用组件的页面模版 -->
-<view class='new wrap'>
+<view class='node-topic wrap'>
   <my-component
-  wx:for="{{newData}}"
+  wx:for="{{datas}}"
   wx:key="{{item.id}}"
   data="{{item}}"
 
   ></my-component>
 
 </view>
+
 <loading hidden="{{hidden}}">加载中...</loading>

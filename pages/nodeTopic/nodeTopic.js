@@ -1,14 +1,21 @@
 
 
-// pages/new/new.js
+var app = getApp()
+wx.cloud.init()
+
+// pages/hot/hot.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    newData: [],
+    datas: [],
     hidden: false
+  },
+
+  getData: function () {
+
   },
 
   /**
@@ -21,16 +28,17 @@ Page({
       name: 'v2ex',
       // 传给云函数的参数
       data: {
-        url: 'https://www.v2ex.com/api/topics/latest.json'
+        url: 'https://www.v2ex.com/api/topics/show.json?node_id=' +  options.id
       },
     })
       .then(res => {
-        _this.setData({ newData: res.result })
+        console.log(res) // 3
+        _this.setData({ datas: res.result })
         setTimeout(() => {
           _this.setData({ hidden: true });
         }, 300)
       })
-      .catch(console.error)    
+      .catch(console.error)
 
   },
 

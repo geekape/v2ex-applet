@@ -1,17 +1,17 @@
 <!-- 组件模板 -->
-<view class="panle">
+<view class="panle" bindtap='viewDetail' id='{{data.id}}'>
   <view class='panle-hd'>
-    <image class='panle-hd__img' src="{{icon}}"></image>
-    <text class='panle-hd__name'>{{name}}</text>
+    <image class='panle-hd__img' src="{{data.member.avatar_large}}"></image>
+    <text class='panle-hd__name'>{{data.member.username}}</text>
   </view>
-  <text class='panle-tt'>{{title}}</text>
+  <text class='panle-tt'>{{data.title}}</text>
 
   <view class='panle-ft'>
-    <text class='panle-ft__tag'>{{tag}}</text>
+    <text class='panle-ft__tag'>{{data.node.title}}</text>
     <icon class="iconfont icon-shijian"></icon>
-    <text class='panle-ft__time'> {{time + '分钟前'}}</text>
+    <text class='panle-ft__time'> {{time}}</text>
     <icon class="iconfont icon-pinglun"></icon>
-    <text class='panle-ft__comment'> {{mes}}</text>
+    <text class='panle-ft__comment'> {{data.replies}}</text>
   </view>
   <slot></slot>
 </view>

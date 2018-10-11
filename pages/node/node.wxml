@@ -3,12 +3,18 @@
 <view class='node wrap'>
   
   <view class='node-item' wx:for="{{nodeData}}" wx:key="item.id">
-    <image class='node-item__img' src="{{item.icon}}"></image>
-    <text class='node-item__txt'>{{item.tag}}</text>
+    <navigator url="../nodeTopic/nodeTopic?id={{item.id}}" hover-class="navigator-hover">
+      <image class='node-item__img' src="{{item.avatar_large}}"></image>
+      <text class='node-item__txt'>{{item.title}}</text>
+    </navigator>
+    
   </view>
+
+  
 
 </view>
 
 <view>
 
 </view>
+<loading hidden="{{hidden}}">加载中...</loading>

@@ -1,0 +1,33 @@
+<!--pages/detail/detail.wxml-->
+<view class='detail' hidden="{{!hidden}}">
+  <text class='detail-tt'>{{detailData.title}}</text>
+
+  <!-- 作者信息 -->
+  <view class='detail-author'>
+    <image class='' src='{{detailData.member.avatar_large}}'></image>
+    <text class='detail-author__name'>{{detailData.member.username}}</text>
+    <text>{{detailData.created}}</text>
+  </view>
+
+  <!-- 主要内容 -->
+  <view class='detail-ct'>{{detailData.content}}</view>
+
+
+  <!-- 留言 -->
+  <view class='detail-mes'>
+
+    <view class='detail-mes__item' wx:for="{{message}}" wx:key="item.id">
+      <image src='{{item.member.avatar_large}}'></image>
+      <view class='detail-mes__info'>
+        <view>
+        <text class='detail-mes__name'>{{item.member.username}}</text>
+        <text class='detail-mes__tower'>{{index}}楼</text>
+        </view>
+        <text class='detail-mes__txt'>{{item.content}}</text>
+        <text class='detail-mes__time'>{{item.created}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<loading hidden="{{hidden}}">加载中...</loading>

@@ -1,6 +1,7 @@
-var app = getApp()
-var API = require('../../utils/api.js')
 
+
+var app = getApp()
+wx.cloud.init()
 
 // pages/hot/hot.js
 Page({
@@ -9,7 +10,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    hotData:[]
+    hotData:[],
+    hidden: false
   },
 
   getData: function() {
@@ -20,24 +22,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this
-    // 使用 Mock
-    API.ajax('', function (res) {
-      //这里既可以获取模拟的res
-      console.log(res)
-      that.setData({
-        hotData: res.data
+    var _this = this
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'v2ex',
+      // 传给云函数的参数
+      data: {
+        url: 'https://www.v2ex.com/api/topics/hot.json'
+      },
+    })
+      .then(res => {
+        console.log(res) // 3
+        _this.setData({ hotData: res.result})
+        setTimeout(() => {
+          _this.setData({ hidden: true });
+        }, 300)
       })
-    });
+      .catch(console.error)
 
-    console.log(this.data.hotData)
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.getData();
+    
   },
 
   /**

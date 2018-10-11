@@ -7,21 +7,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-    nodeData: []
+    nodeData: [],
+    hidden: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this
-    // 使用 Mock
-    API.ajax('', function (res) {
-      that.setData({
-        nodeData: res.data
-      })
-
+    var _this = this
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'v2ex',
+      // 传给云函数的参数
+      data: {
+        url: 'https://www.v2ex.com/api/nodes/all.json'
+      },
     })
+      .then(res => {
+        console.log(res.result) // 3
+        _this.setData({ nodeData: res.result })
+        setTimeout(() => {
+          _this.setData({ hidden: true });
+        }, 300)
+      })
+      .catch(console.error)    
   
       
   },
