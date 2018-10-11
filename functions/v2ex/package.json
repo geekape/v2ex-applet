@@ -1,0 +1,15 @@
+{
+  "name": "v2ex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "iconv-lite": "^0.4.24",
+    "wx-server-sdk": "latest"
+  }
+}
