@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/node/node",
+    "pages/hot/hot",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/new/new"
+    
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f5f5f5",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "position": "top",
+    "backgroundColor": "#f5f5f5",
+    "selectedColor": "#69d2e7",
+    "list": [
+      {
+        "pagePath": "pages/hot/hot",
+        "text": "最热"
+      },
+      {
+        "pagePath": "pages/new/new",
+        "text": "最新"
+      },
+      {
+        "pagePath": "pages/node/node",
+        "text": "节点"
+      }
+    ]
+  }
+}

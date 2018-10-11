@@ -1,0 +1,34 @@
+/* pages/node/node.wxss */
+
+.node {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.node-item {
+background:#fff;
+flex:33.3%;
+overflow:hidden;
+margin-top:10px;
+text-align:center;
+padding:10px;
+
+}
+.node-item:nth-child(odd) {
+  margin-right:5px;
+}
+.node-item:nth-child(even) {
+  margin-left:5px;
+}
+
+
+.node-item__img {
+  width:60px;
+height:60px;
+margin:0 auto;
+border-radius:50%;
+
+}
+.node-item__txt {
+  display: block;
+}

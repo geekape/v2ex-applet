@@ -1,0 +1,14 @@
+<!-- 引用组件的页面模版 -->
+<view class='hot wrap'>
+  <my-component
+  wx:for="{{hotData}}"
+  wx:key="{{item.id}}"
+  title="{{item.title}}"
+  tag="{{item.tag}}"
+  icon="{{item.icon}}"
+  name="{{item.name}}"
+  time="{{item.time}}"
+  mes="{{item.mes}}"
+  ></my-component>
+
+</view>

@@ -1,0 +1,14 @@
+<!--pages/node/node.wxml-->
+
+<view class='node wrap'>
+  
+  <view class='node-item' wx:for="{{nodeData}}" wx:key="item.id">
+    <image class='node-item__img' src="{{item.icon}}"></image>
+    <text class='node-item__txt'>{{item.tag}}</text>
+  </view>
+
+</view>
+
+<view>
+
+</view>

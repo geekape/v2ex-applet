@@ -1,0 +1,66 @@
+/* components/panel/panel.wxss */
+
+.panle {
+  background: #fff;
+  padding: 15rpx 30rpx;
+  border-radius: 3px;
+  margin-top: 30rpx;
+}
+.panle-hd {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.panle-hd__img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.panle-hd__name {
+  margin-left: 20rpx;
+  font-size: 14px;
+  color: #b2b2b2;
+}
+
+
+.panle-ft {
+  margin-top: 40rpx;
+  font-size: 12px;
+  color: #b2b2b2;
+  display: flex;
+  align-items: center;
+}
+.panle-ft text {
+  margin-right: 15px;
+}
+
+.panle-ft__tag {
+  background: #c3edf5;
+  padding: 4rpx 8rpx;
+  color: #fff;
+}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 863939 */
+  src: url('//at.alicdn.com/t/font_863939_71tgago22i4.eot');
+  src: url('//at.alicdn.com/t/font_863939_71tgago22i4.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_863939_71tgago22i4.woff') format('woff'),
+  url('//at.alicdn.com/t/font_863939_71tgago22i4.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_863939_71tgago22i4.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  margin-right: 10rpx;
+}
+
+.icon-pinglun:before { content: "\e63d"; }
+
+.icon-shijian:before { content: "\e8a9"; }
+

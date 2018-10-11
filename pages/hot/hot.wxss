@@ -1,0 +1,5 @@
+/* pages/hot/hot.wxss */
+
+.hot {
+  padding:20rpx;
+}

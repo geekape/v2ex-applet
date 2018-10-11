@@ -1,0 +1,17 @@
+<!-- 组件模板 -->
+<view class="panle">
+  <view class='panle-hd'>
+    <image class='panle-hd__img' src="{{icon}}"></image>
+    <text class='panle-hd__name'>{{name}}</text>
+  </view>
+  <text class='panle-tt'>{{title}}</text>
+
+  <view class='panle-ft'>
+    <text class='panle-ft__tag'>{{tag}}</text>
+    <icon class="iconfont icon-shijian"></icon>
+    <text class='panle-ft__time'> {{time + '分钟前'}}</text>
+    <icon class="iconfont icon-pinglun"></icon>
+    <text class='panle-ft__comment'> {{mes}}</text>
+  </view>
+  <slot></slot>
+</view>
